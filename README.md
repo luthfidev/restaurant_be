@@ -28,8 +28,9 @@ Clone the repo, install dependencies, and start the API server locally.
 ```shell
 git clone https://github.com/luthfidev/restaurant_be.git
 cd restaurant_be
-mv .envDefault .env
+create .env
 vim .env
+npm install
 pm2 start ecosystem.config.js 
 ```
 ***
