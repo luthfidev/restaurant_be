@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var app = require("../app");
-var debug = require("debug")("restaurants:server");
+var debug = require("debug")("restaurant_be:server");
 
 
 const webServerHttp = require('http');
