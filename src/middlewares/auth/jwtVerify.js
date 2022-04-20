@@ -16,6 +16,7 @@ module.exports = async function (req, res, next) {
       return next();
     }
 
+
     if (
       !url.parse(req.url).pathname.startsWith("/auth") &&
       url.parse(req.url).pathname !== "/ping"
@@ -28,11 +29,13 @@ module.exports = async function (req, res, next) {
       if (isAdmin == 1) {
         return next();
       }
+      
+
       if (url.parse(req.url).pathname.startsWith("/admin")) {
         return res.answerWith(401, "Not Authorized");
       }
 
-      priviledges.push("/report");
+      // priviledges.push("/report");
       //check user priviledges
       let urlPath = url.parse(req.url).pathname;
       let checkLengthSubUrlPath = urlPath.split("/").length - 1; //3

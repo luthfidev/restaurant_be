@@ -8,7 +8,7 @@ exports.post = async function (req, res, next) {
         if (!username && !access_level_id) {
             return res.answerWith(400, 'Data required')
         }
-        const queryUsername = `SELECT username FROM users WHERE name = '${username}'`;
+        const queryUsername = `SELECT username FROM users WHERE username = '${username}'`;
         const dataQueryUsername = await model.sequelize.query(queryUsername, {
             type: model.sequelize.QueryTypes.SELECT, transaction: t
         });

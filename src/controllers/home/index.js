@@ -1,48 +1,28 @@
-const { pagination, csv } = require("../../utils");
+const { pagination } = require("../../utils");
 const model = require("../../models");
 
 exports.get = async function (req, res, next) {
   try {
+    // take user id from payload
+    const userIdPayload = req.jwtPayload.user_id;
     const {
       page,
       limit,
-      id,
-      username,
-      outletId,
-      outletName,
-      search,
+      id = parseInt(userIdPayload),
     } = req.query;
 
-    let queryId = "";
-    let queryName = "";
-    let queryOutletId = "";
-    let queryOutletName = "";
-    let querySearch = "";
+
+    let queryId = `WHERE u.id = NULL`;
 
     if (id) {
-      queryId = ` AND u.id = ${id}`;
-    }
-    if (username) {
-      queryName = ` AND u.username LIKE '%${username}%' `;
-    }
-    if (outletId) {
-      queryOutletId = ` AND o.id as outlet_id LIKE '%${outletId}%' `;
-    }
-    if (outletName) {
-      queryOutletName = ` AND o.name as outlet_name = '${outletName}'`;
-    }
-    if (search) {
-      querySearch = `AND (u.name LIKE '%${search}%' OR o.name LIKE '%${search}%')`;
+      queryId = `WHERE u.id = ${id}`;
     }
 
     const queryCount = `SELECT
                                 COUNT (o.id) AS Total
                             FROM outlets o
                             LEFT JOIN users u ON u.id = o.user_id 
-                            WHERE u.id != 0
-                                ${queryId}
-                                ${queryName}
-                                ${querySearch}`;
+                            ${queryId}`;
 
     const countQuery = await model.sequelize.query(queryCount, {
       type: model.sequelize.QueryTypes.SELECT,
@@ -63,11 +43,7 @@ exports.get = async function (req, res, next) {
                                 ON o.user_id = u.id
                             INNER JOIN access_level a 
                                 ON a.id = u.access_level_id
-                            WHERE u.id != 0
                                     ${queryId}
-                                    ${queryName}             
-                                    ${querySearch}
-                                ORDER BY u.id ASC
                                 LIMIT ${paginationUtils.limit} OFFSET ${paginationUtils.offset}`;
     const dataQueryListOutlets = await model.sequelize.query(queryListOutlets, {
       type: model.sequelize.QueryTypes.SELECT,

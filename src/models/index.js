@@ -26,8 +26,8 @@ const sequelize = new Sequelize(
     //   },
     // },
     timezone: "+07:00", //for writing to database
-    logging: console.log,
-    // logging: false,
+    // logging: console.log,
+    logging: false,
     pool: {
       max: 200,
       min: 0,
