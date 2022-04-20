@@ -1,6 +1,5 @@
 # API Restaurant 
 
-
 ***
 
 ## Dependencies
@@ -28,7 +27,7 @@ Clone the repo, install dependencies, and start the API server locally.
 
 ```shell
 git clone https://github.com/luthfidev/restaurant_be.git
-cd muhiLibrary_backend
+cd restaurant_be
 mv .envDefault .env
 vim .env
 pm2 start ecosystem.config.js 
