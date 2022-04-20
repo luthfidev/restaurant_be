@@ -37,9 +37,9 @@ pm2 start ecosystem.config.js
 
 ## Configuration
 
-change .envDefault to .env, and you can modified according to your specifications.
+create .env, and you can modified according to your specifications.
 
-APP_PORT = 3100<br>
+PORT = 3100<br>
 APP_URL = http://localhost:3100<br>
 <br>
 DB_HOST = localhost<br>
@@ -47,19 +47,19 @@ DB_USER = 'must be filled'<br>
 DB_PASS = 'must be filled'<br>
 DB_NAME = restaurant_app<br>
 DB_PORT = 5432<br>
+DB_DIALECT ='postgresql'<br>
 <br>
-TOKEN_SECRET = 'must be filled'<br>
-TOKEN_ALGORITMA = HS256<br>
+JWT_KEY = 'must be filled'<br>
 
 
 ## API End Point
 ### Auth
-* [Auth For Signin](readme/signin.md) : `POST /auth/signin`
-* [Auth For Signup](readme/signup.md) : `POST /auth/signup`
+* [Auth For Signin](readme/signin.md) : `POST /auth/login`
+* [Auth For Signup](readme/signup.md) : `POST /auth/register`
 
 ### Home
-* [Show List Outlet User](readme/users/get.md) : `GET /users`
-* [Created Outlet](readme/users/post.md) : `POST /users`
+* [Show List Outlet User](readme/home/listOutletUser.md) : `GET /home`
+* [Created Outlet](readme/home/addOutlet.md) : `POST /outlets/add`
 
 ### Admin
-* [Show List All Outlet](readme/books/get.md) : `GET /books`
+* [Show List All Outlet](readme/admin/listAllOutlet.md) : `GET /admin`

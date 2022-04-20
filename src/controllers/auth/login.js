@@ -32,7 +32,6 @@ exports.post = async function (req, res, next) {
             })
 
             let priviledges = []
-
             for (let i = 0; i < dataQueryUsersPriviledges.length; i++) {
                 priviledges.push(dataQueryUsersPriviledges[i].path)
             }
