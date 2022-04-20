@@ -6,9 +6,7 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        name: DataTypes.STRING,
-        password: DataTypes.STRING,
-        email: DataTypes.STRING,
+        username: DataTypes.STRING,
         access_level_id : DataTypes.INTEGER
     }, {
         tableName: 'users',
