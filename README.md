@@ -51,47 +51,15 @@ DB_PORT = 5432<br>
 TOKEN_SECRET = 'must be filled'<br>
 TOKEN_ALGORITMA = HS256<br>
 
-## Heroku
-<https://api-muhilibrary.herokuapp.com/>
 
 ## API End Point
 ### Auth
 * [Auth For Signin](readme/signin.md) : `POST /auth/signin`
 * [Auth For Signup](readme/signup.md) : `POST /auth/signup`
 
-### User
-* [Show List User](readme/users/get.md) : `GET /users`
-* [Created User](readme/users/post.md) : `POST /users`
-* [Update User](readme/users/patch.md) : `PATCH /users/:id`
-* [Delete User](readme/users/delete.md) : `DELETE /users/:id`
-* [Upload Avatar User](readme/users/patchavatar.md) : `PATCH /users/upload/:id`
+### Home
+* [Show List Outlet User](readme/users/get.md) : `GET /users`
+* [Created Outlet](readme/users/post.md) : `POST /users`
 
-### Book
-* [Show List Book](readme/books/get.md) : `GET /books`
-* [Created Book](readme/books/post.md) : `POST /books`
-* [Update Book](readme/books/patch.md) : `PATCH /books/:id`
-* [Delete Book](readme/books/delete.md) : `DELETE /books/:id`
-
-### Genre
-* [Show List Book](readme/genres/get.md) : `GET /genres`
-* [Created Book](readme/genres/post.md) : `POST /genres`
-* [Update Book](readme/genres/patch.md) : `PATCH /genres/:id`
-* [Delete Book](readme/genres/delete.md) : `DELETE /genres/:id`
-
-### Author
-* [Show List Book](readme/authors/get.md) : `GET /authors`
-* [Created Book](readme/authors/post.md) : `POST /authors`
-* [Update Book](readme/authors/patch.md) : `PATCH /authors/:id`
-* [Delete Book](readme/authors/delete.md) : `DELETE /authors/:id`
-
-### Transaction Admin
-* [Show List Transaction](readme/transactions/get.md) : `GET /transactions`
-* [Created Transaction](readme/transactions/post.md) : `POST /transactions`
-* [Update Transaction](readme/transactions/patch.md) : `PATCH /transactions/:id`
-* [Delete Transaction](readme/transactions/delete.md) : `DELETE /transactions/:id`
-
-### Transaction User
-* [Show History trabsaction](readme/transactions/user/get.md) : `GET /transactions/userstatus`
-* [Borrow Book](readme/transactions/user/post.md) : `POST /transactions/user`
-* [Update Transaction for cancel only](readme/transactions/user/patch.md) : `PATCH /transactions/:id`
-
+### Admin
+* [Show List All Outlet](readme/books/get.md) : `GET /books`
