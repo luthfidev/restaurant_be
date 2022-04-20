@@ -37,7 +37,7 @@ exports.post = async function (req, res, next) {
                 priviledges.push(dataQueryUsersPriviledges[i].path)
             }
 
-            priviledges.push('/home','/outlets');
+            // priviledges.push('/home','/outlets');
 
             const payload = {
                 user_id: dataQueryUsers[0].id,
