@@ -4,8 +4,8 @@ module.exports = {
   apps: [{
     name: 'restaurants_be',
     script: 'bin/www',
-    watch: true,
-    max_memory_restart: '1G',
+    // watch: true,
+    // max_memory_restart: '1G',
     instances: 1,
     instance_var: "INSTANCE_ID",
     exec_mode: "cluster_mode",
