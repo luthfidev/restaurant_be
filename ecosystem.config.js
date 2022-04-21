@@ -4,9 +4,9 @@ module.exports = {
   apps: [{
     name: 'restaurants_be',
     script: 'bin/www',
-    watch: true,
-    max_memory_restart: '1G',
-    instances: 1,
+    // watch: true,
+    // max_memory_restart: '1G',
+    instances: 0,
     instance_var: "INSTANCE_ID",
     exec_mode: "cluster_mode",
     // out_file: "~/.pm2/logs/erp-local-api-out.log",
