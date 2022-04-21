@@ -21,6 +21,12 @@ module.exports = {
       DB_PORT: process.env.DB_PORT,
       DB_DIALECT: process.env.DB_DIALECT,
       JWT_KEY: process.env.JWT_KEY,
+    },
+    env_development: {
+      NODE_ENV:  "development"
+    },
+    env_production: {
+      NODE_ENV:  "production"
     }
   }]
 };
