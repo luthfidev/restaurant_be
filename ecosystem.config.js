@@ -8,7 +8,7 @@ module.exports = {
     max_memory_restart: '1G',
     instances: 1,
     instance_var: "INSTANCE_ID",
-    exec_mode: "cluster",
+    exec_mode: "cluster_mode",
     // out_file: "~/.pm2/logs/erp-local-api-out.log",
     // error_file: "~/.pm2/logs/erp-local-api-error.log",
     ignore_watch : ["node_modules", "public"],
